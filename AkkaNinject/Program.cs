@@ -1,9 +1,7 @@
 ﻿using Akka.Actor;
 using Akka.DI.Core;
-using Akka.DI.Ninject;
 using AkkaNinject.Actors;
-using AkkaNinject.Services;
-using Ninject;
+using AkkaNinject.Config;
 using System;
 
 namespace AkkaNinject
@@ -12,19 +10,18 @@ namespace AkkaNinject
     {
         static void Main(string[] args)
         {
-            var container = new StandardKernel();
-            container.Bind<IPrinterService>().To<PrinterService>();
+            AkkaConfig.RegisterActors();
+            NinjectConfig.RegisterBindings();
 
-            var actorSystem = ActorSystem.Create("MyActorSystem");
-
-            var resolver = new NinjectDependencyResolver(container, actorSystem);
+            var actorSystem = AkkaConfig.InspectorActorSystem;
             var wordInspectorActor = actorSystem.ActorOf(
                                         actorSystem.DI().Props<WordInspectorActor>(), "WordInspectorActor");
 
+            wordInspectorActor.Tell(WordInspectorActor.SystemCommands.Start);
+
+
             Console.WriteLine("Welcome!! Please enter a word to validate it.");
             Console.WriteLine("Enter 'exit' to close the program.");
-
-            wordInspectorActor.Tell(WordInspectorActor.SystemCommands.Start);
 
             actorSystem.WhenTerminated.Wait();
         }
