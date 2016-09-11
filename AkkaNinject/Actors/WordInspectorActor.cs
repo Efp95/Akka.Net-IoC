@@ -24,11 +24,14 @@ namespace AkkaNinject.Actors
 
         private void Inspect(string message)
         {
-            if (string.IsNullOrWhiteSpace(message))
+            if (SystemCommands.Exit.Equals(message))
+            {
+                Context.System.Terminate();
+                return;
+            }
+            else if (string.IsNullOrWhiteSpace(message))
             {
                 _printerService.Run(ValidationMessages.EmptyInput);
-
-                Self.Tell(Console.ReadLine());
             }
             else
             {
@@ -41,6 +44,13 @@ namespace AkkaNinject.Actors
                     _printerService.Run(ValidationMessages.InvalidInput);
                 }
             }
+
+            ReCall();
+        }
+
+        private void ReCall()
+        {
+            Self.Tell(Console.ReadLine());
         }
 
         struct ValidationMessages
@@ -49,6 +59,12 @@ namespace AkkaNinject.Actors
 
             public const string ValidInput = "You sent a valid input";
             public const string InvalidInput = "You sent an invalid input";
+        }
+
+        public struct SystemCommands
+        {
+            public const string Start = "start";
+            public const string Exit = "exit";
         }
     }
 }
