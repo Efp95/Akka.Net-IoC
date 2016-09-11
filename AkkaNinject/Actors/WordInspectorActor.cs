@@ -18,18 +18,34 @@ namespace AkkaNinject.Actors
 
             Receive<string>(word =>
             {
-                Inspect(word);
+                bool shouldInspect = !(IsUsingCommands(word));
+
+                if (shouldInspect)
+                    Inspect(word);
             });
+        }
+
+
+        private bool IsUsingCommands(string message)
+        {
+            if (SystemCommands.Start.Equals(message))
+            {
+                ReCall();
+                return true;
+            }
+
+            if (SystemCommands.Exit.Equals(message))
+            {
+                Context.System.Terminate();
+                return true;
+            }
+
+            return false;
         }
 
         private void Inspect(string message)
         {
-            if (SystemCommands.Exit.Equals(message))
-            {
-                Context.System.Terminate();
-                return;
-            }
-            else if (string.IsNullOrWhiteSpace(message))
+            if (string.IsNullOrWhiteSpace(message))
             {
                 _printerService.Run(ValidationMessages.EmptyInput);
             }
