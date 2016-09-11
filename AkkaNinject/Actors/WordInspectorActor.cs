@@ -53,10 +53,12 @@ namespace AkkaNinject.Actors
             {
                 if (message.Length % 2 == 0)
                 {
+                    Console.ForegroundColor = ConsoleColor.Green;
                     _printerService.Run(ValidationMessages.ValidInput);
                 }
                 else
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     _printerService.Run(ValidationMessages.InvalidInput);
                 }
             }
@@ -66,6 +68,7 @@ namespace AkkaNinject.Actors
 
         private void ReCall()
         {
+            Console.ForegroundColor = ConsoleColor.Gray;
             Self.Tell(Console.ReadLine());
         }
 
