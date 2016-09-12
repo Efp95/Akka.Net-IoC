@@ -24,13 +24,13 @@ namespace AkkaNet.Actors
 
         private bool IsUsingCommands(string message)
         {
-            if (SystemCommands.Start.Equals(message))
+            if (Messages.SystemCommands.Start.Equals(message))
             {
                 ReCall();
                 return true;
             }
 
-            if (SystemCommands.Exit.Equals(message))
+            if (Messages.SystemCommands.Exit.Equals(message))
             {
                 Context.System.Terminate();
                 return true;
@@ -43,19 +43,19 @@ namespace AkkaNet.Actors
         {
             if (string.IsNullOrWhiteSpace(message))
             {
-                _printerService.Run(ValidationMessages.EmptyInput);
+                _printerService.Run(Messages.ValidationMessages.EmptyInput);
             }
             else
             {
                 if (message.Length % 2 == 0)
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
-                    _printerService.Run(ValidationMessages.ValidInput);
+                    _printerService.Run(Messages.ValidationMessages.ValidInput);
                 }
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    _printerService.Run(ValidationMessages.InvalidInput);
+                    _printerService.Run(Messages.ValidationMessages.InvalidInput);
                 }
             }
 
@@ -68,18 +68,5 @@ namespace AkkaNet.Actors
             Self.Tell(Console.ReadLine());
         }
 
-        struct ValidationMessages
-        {
-            public const string EmptyInput = "You must send a word";
-
-            public const string ValidInput = "You sent a valid input";
-            public const string InvalidInput = "You sent an invalid input";
-        }
-
-        public struct SystemCommands
-        {
-            public const string Start = "start";
-            public const string Exit = "exit";
-        }
     }
 }
