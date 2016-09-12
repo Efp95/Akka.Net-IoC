@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkkaNinject", "AkkaNinject\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkkaNet.Services", "AkkaNet.Services\AkkaNet.Services.csproj", "{8C79CE73-9CE7-41BF-B68E-8C4039FB54D8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkkaNet.Actors", "AkkaNet.Actors\AkkaNet.Actors.csproj", "{43AF25B2-C310-4A5A-9640-263770F05635}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8C79CE73-9CE7-41BF-B68E-8C4039FB54D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C79CE73-9CE7-41BF-B68E-8C4039FB54D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C79CE73-9CE7-41BF-B68E-8C4039FB54D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43AF25B2-C310-4A5A-9640-263770F05635}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43AF25B2-C310-4A5A-9640-263770F05635}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43AF25B2-C310-4A5A-9640-263770F05635}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43AF25B2-C310-4A5A-9640-263770F05635}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
