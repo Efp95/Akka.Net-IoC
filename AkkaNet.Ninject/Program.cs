@@ -19,7 +19,7 @@ namespace AkkaNet.Ninject
             wordInspectorActor.Tell(Messages.SystemCommands.Start);
 
 
-            Console.WriteLine("Welcome!! Please enter a word to validate it.");
+            Console.WriteLine("Welcome from Akka.Ninject!! Please enter a word to validate it.");
             Console.WriteLine("Enter 'exit' to close the program.");
 
             actorSystem.WhenTerminated.Wait();
