@@ -1,13 +1,8 @@
 ﻿using Akka.Actor;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace AkkaNet.Ninject.Config
+namespace AkkaNet.Actors
 {
-    class AkkaConfig
+    public class AkkaConfig
     {
         public static ActorSystem InspectorActorSystem;
 

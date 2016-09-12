@@ -1,9 +1,10 @@
 ﻿using Akka.DI.Ninject;
+using AkkaNet.Actors;
 using AkkaNet.Services;
 using AkkaNet.Services.Interfaces;
 using Ninject;
 
-namespace AkkaNet.Ninject.Config
+namespace AkkaNet.Ninject
 {
     class NinjectConfig
     {

@@ -1,7 +1,6 @@
 ﻿using Akka.Actor;
 using Akka.DI.Core;
 using AkkaNet.Actors;
-using AkkaNet.Ninject.Config;
 using System;
 
 namespace AkkaNet.Ninject

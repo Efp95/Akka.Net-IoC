@@ -65,8 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Config\AkkaConfig.cs" />
-    <Compile Include="Config\NinjectConfig.cs" />
+    <Compile Include="NinjectConfig.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
