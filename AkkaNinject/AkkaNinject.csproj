@@ -65,17 +65,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Actors\WordInspectorActor.cs" />
     <Compile Include="Config\AkkaConfig.cs" />
     <Compile Include="Config\NinjectConfig.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\IPrinterService.cs" />
-    <Compile Include="Services\PrinterService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AkkaNet.Actors\AkkaNet.Actors.csproj">
+      <Project>{43af25b2-c310-4a5a-9640-263770f05635}</Project>
+      <Name>AkkaNet.Actors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AkkaNet.Services\AkkaNet.Services.csproj">
+      <Project>{8c79ce73-9ce7-41bf-b68e-8c4039fb54d8}</Project>
+      <Name>AkkaNet.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

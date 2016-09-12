@@ -1,6 +1,6 @@
 ﻿using Akka.Actor;
 using Akka.DI.Core;
-using AkkaNinject.Actors;
+using AkkaNet.Actors;
 using AkkaNinject.Config;
 using System;
 
@@ -17,7 +17,7 @@ namespace AkkaNinject
             var wordInspectorActor = actorSystem.ActorOf(
                                         actorSystem.DI().Props<WordInspectorActor>(), "WordInspectorActor");
 
-            wordInspectorActor.Tell(WordInspectorActor.SystemCommands.Start);
+            wordInspectorActor.Tell(Messages.SystemCommands.Start);
 
 
             Console.WriteLine("Welcome!! Please enter a word to validate it.");

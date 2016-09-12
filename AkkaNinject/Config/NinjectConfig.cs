@@ -1,5 +1,6 @@
 ﻿using Akka.DI.Ninject;
-using AkkaNinject.Services;
+using AkkaNet.Services;
+using AkkaNet.Services.Interfaces;
 using Ninject;
 
 namespace AkkaNinject.Config
