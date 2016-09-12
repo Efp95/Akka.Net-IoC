@@ -1,10 +1,10 @@
 ﻿using Akka.Actor;
 using Akka.DI.Core;
 using AkkaNet.Actors;
-using AkkaNinject.Config;
+using AkkaNet.Ninject.Config;
 using System;
 
-namespace AkkaNinject
+namespace AkkaNet.Ninject
 {
     class Program
     {

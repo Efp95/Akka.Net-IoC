@@ -7,8 +7,8 @@
     <ProjectGuid>{4C445B41-4208-4AEF-8DC4-E5B2A899C365}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AkkaNinject</RootNamespace>
-    <AssemblyName>AkkaNinject</AssemblyName>
+    <RootNamespace>AkkaNet.Ninject</RootNamespace>
+    <AssemblyName>AkkaNet.Ninject</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

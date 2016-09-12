@@ -3,7 +3,7 @@ using AkkaNet.Services;
 using AkkaNet.Services.Interfaces;
 using Ninject;
 
-namespace AkkaNinject.Config
+namespace AkkaNet.Ninject.Config
 {
     class NinjectConfig
     {
